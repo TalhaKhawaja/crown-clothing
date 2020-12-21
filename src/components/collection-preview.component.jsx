@@ -1,7 +1,6 @@
-import { findAllByTitle } from '@testing-library/react';
 import React from 'react';
-import '../../assets/styles/collection-preview.scss';
-import CollectionItem from '../collection-item/collection-item.component';
+import '../assets/styles/collection-preview.scss';
+import CollectionItem from './collection-item.component';
 
 const CollectionPreview = ({title, items}) => (
     <div className='collection-preview'>
