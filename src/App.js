@@ -8,8 +8,8 @@ import SignInAndSignOutPage from './components/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.action';
-import {selectCurrentUser} from './redux/user/user.selector';
-import {createStructuredSelector} from 'reselect';
+import { selectCurrentUser } from './redux/user/user.selector';
+import { createStructuredSelector } from 'reselect';
 import CheckOutPage from './pages/checkout/checkout.component';
 
 class App extends React.Component {
@@ -45,7 +45,7 @@ class App extends React.Component {
           <Route exact path='/' component={HomePage}></Route>
           <Route path='/shop' component={ShopPage}></Route>
           <Route exact path='/checkout' component={CheckOutPage}></Route>
-          <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/'/>)  : (<SignInAndSignOutPage/>)}></Route>
+          <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignOutPage />)}></Route>
         </Switch>
       </div>
     );
