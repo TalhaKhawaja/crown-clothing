@@ -15,25 +15,24 @@ export const fetchCollectionFailure = errorMessage => ({
     payload: errorMessage
 });
 
-export const fetchCollectionsStartAsync = () => {
-    return dispatch => {
-        const collectionRef = firestore.collection('collections');
-        dispatch(fetchCollectionsStart());
+// export const fetchCollectionsStartAsync = () => {
+//     return dispatch => {
+//         dispatch(fetchCollectionsStart());
 
-        // Promise approach to get collection data
-        collectionRef
-            .get()
-            .then(snapshot => {
-                const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-                dispatch(fetchCollectionSuccess(collectionsMap));
-            })
-            .catch(error => dispatch(fetchCollectionFailure(error.message)));
-
-        // Observable approach to get collection data
-        // this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
-        //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-        //     updateCollections(collectionsMap);
-        //     this.setState({ loading: false });
-        // });
-    };
-};
+//         // Promise approach to get collection data
+//         collectionRef
+//             .get()
+//             .then(snapshot => {
+//                 const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+//                 dispatch(fetchCollectionSuccess(collectionsMap));
+//             })
+//             .catch(error => dispatch(fetchCollectionFailure(error.message)));
+    
+//         // Observable approach to get collection data
+//         // this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+//         //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+//         //     updateCollections(collectionsMap);
+//         //     this.setState({ loading: false });
+//         // });
+//     };
+// };
